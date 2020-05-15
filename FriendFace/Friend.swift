@@ -11,5 +11,5 @@ import Foundation
 struct Friend: Codable, Identifiable
 {
     var name: String
-    var id: UUID
+    var id: String
 }

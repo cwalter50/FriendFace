@@ -18,10 +18,17 @@ struct ContentView: View {
             List {
                 ForEach (users.userList) {
                     user in
-                    VStack {
-                        Text(user.name)
-                        Text(user.about)
+                    NavigationLink(destination: UserView(userList: self.users.userList, userId: user.id)) {
+                        
+                        HStack {
+                            Circle()
+                            .frame(width: 25, height: 25)
+                                .foregroundColor(user.activeColor)
+                            Text(user.name)
+                                .font(.title)
+                        }
                     }
+                    
                 }
             }
         .navigationBarTitle("FriendFace")
@@ -36,23 +43,7 @@ struct ContentView: View {
         loadDataFromInternet()
            
     }
-//    func loadDataFromInternet() {
-//        guard let url = URL(string: "https://www.hackingwithswift.com/samples/friendface.json") else {
-//            debugPrint("Invalid URL")
-//            return
-//        }
-//        let request = URLRequest(url: url)
-//        URLSession.shared.dataTask(with: request) { data, response, error in
-//            if let data = data {
-//                if let decodedResponse = try? JSONDecoder().decode([User].self, from: data) {
-//                    DispatchQueue.main.async {
-//                        self.users.userList = decodedResponse
-//                    }
-//                    return
-//                }         }
-//            debugPrint("fetch failed: \(error?.localizedDescription ?? "Unknown error")")
-//        }.resume()
-//    }
+
     
     func loadDataFromInternet() {
         let url = URL(string: "https://www.hackingwithswift.com/samples/friendface.json")!
