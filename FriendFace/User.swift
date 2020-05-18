@@ -13,19 +13,33 @@ struct User: Codable, Identifiable
 {
     
     var name: String
-    var age: Int
+    var age: Int16
     var company: String
     var email: String
+    var address : String
     var isActive: Bool
     var about: String
     var registered: String // Maybe Date
     var id: String
-    var address : String
 
     var tags: [String]
 
     var friends: [Friend]
 
+    init(name: String, age: Int16, company: String, email: String, address: String, isActive: Bool, about: String, registered: String, id: String, tags: [String], friends: [Friend] )
+    {
+        self.name = name
+        self.age = age
+        self.company = company
+        self.email = email
+        self.address = address
+        self.isActive = isActive
+        self.about = about
+        self.registered = registered
+        self.id = id
+        self.tags = tags
+        self.friends = friends
+    }
     init()
     {
         name = "Test"
@@ -65,6 +79,16 @@ struct User: Codable, Identifiable
         {
             return Color.red
         }
+    }
+    
+    func saveToCoreData()
+    {
+        
+    }
+    
+    func readFromCoreData()
+    {
+        
     }
     
 

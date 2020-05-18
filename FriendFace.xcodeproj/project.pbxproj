@@ -19,6 +19,8 @@
 		83886BDB246C72E60007B527 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83886BDA246C72E60007B527 /* Friend.swift */; };
 		83886BDD246C72FC0007B527 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83886BDC246C72FC0007B527 /* Users.swift */; };
 		83886BE1246E17870007B527 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83886BE0246E17870007B527 /* UserView.swift */; };
+		83886BE4247211440007B527 /* CDUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83886BE2247211440007B527 /* CDUser+CoreDataClass.swift */; };
+		83886BE5247211440007B527 /* CDUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83886BE3247211440007B527 /* CDUser+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		83886BDA246C72E60007B527 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		83886BDC246C72FC0007B527 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		83886BE0246E17870007B527 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		83886BE2247211440007B527 /* CDUser+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUser+CoreDataClass.swift"; sourceTree = "<group>"; };
+		83886BE3247211440007B527 /* CDUser+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,8 @@
 				83886BD6246C626C0007B527 /* friendface.json */,
 				83886BD8246C65310007B527 /* User.swift */,
 				83886BDA246C72E60007B527 /* Friend.swift */,
+				83886BE2247211440007B527 /* CDUser+CoreDataClass.swift */,
+				83886BE3247211440007B527 /* CDUser+CoreDataProperties.swift */,
 				83886BDC246C72FC0007B527 /* Users.swift */,
 				83886BC8246C625C0007B527 /* Assets.xcassets */,
 				83886BCD246C625C0007B527 /* LaunchScreen.storyboard */,
@@ -166,7 +172,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				83886BC5246C625A0007B527 /* FriendFace.xcdatamodeld in Sources */,
+				83886BE5247211440007B527 /* CDUser+CoreDataProperties.swift in Sources */,
 				83886BC0246C625A0007B527 /* AppDelegate.swift in Sources */,
+				83886BE4247211440007B527 /* CDUser+CoreDataClass.swift in Sources */,
 				83886BC7246C625A0007B527 /* ContentView.swift in Sources */,
 				83886BE1246E17870007B527 /* UserView.swift in Sources */,
 				83886BDB246C72E60007B527 /* Friend.swift in Sources */,

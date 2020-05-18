@@ -12,6 +12,10 @@ struct ContentView: View {
     
     @ObservedObject var users = Users()
     
+    // CoreData Stuff
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(entity: CDUser.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \CDUser.name, ascending: true)]) var cdUsers: FetchedResults<CDUser>
+    
     
     var body: some View {
         NavigationView {
@@ -39,8 +43,16 @@ struct ContentView: View {
 
     func loadData() {
         
-        print("load data from internet")
-        loadDataFromInternet()
+//        print("load data from internet")
+//        loadDataFromInternet()
+        
+        if cdUsers.count == 0 {
+            print("load data from internet")
+            loadDataFromInternet()
+        } else {
+            print("load data from core data")
+            loadDataFromCoreData()
+        }
            
     }
 
@@ -60,12 +72,28 @@ struct ContentView: View {
                         u1.name < u2.name
                     })
                 }
-
-//                self.saveDataToCoreData(decoded)
+                // save to CoreData, so that next time, I do not need to load from the internet.
+                self.saveDataToCoreData(decoded)
             } else {
                 fatalError("Invalid response from server.")
             }
         }.resume()
+    }
+    
+    func saveDataToCoreData(_ data: [User]) {
+        for user in data {
+            let cdUser = CDUser(context: moc)
+            cdUser.setProperties(from: user)
+        }
+        try! moc.save()
+    }
+    
+    func loadDataFromCoreData() {
+        
+        // cdUsers are grabbed in the fetchResults at the top of this struct. Place them as type User into the userList...
+        users.userList = cdUsers.map {
+            $0.user
+        }
     }
 
 }
